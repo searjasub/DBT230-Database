@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b55282e-60e0-4c36-8d36-411d986f8b6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbt230/group1/database/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/DynamoDBJDBC41.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dbt230/group1/database/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbt230/group1/database/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dbt230/group1/database/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dbt230/group1/database/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbt230/group1/database/Employee.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +33,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -94,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566831323661</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first interaction">
+      <created>1566936136393</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566936136393</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="jar file" />
-    <option name="LAST_COMMIT_MESSAGE" value="jar file" />
+    <MESSAGE value="first interaction" />
+    <option name="LAST_COMMIT_MESSAGE" value="first interaction" />
   </component>
 </project>

@@ -5,8 +5,6 @@ import redis.clients.jedis.Jedis;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Driver {
 
@@ -16,9 +14,10 @@ public class Driver {
     private static int nextId = 1;
 
     public static void main(String[] args) throws IOException {
+        saveIds();
 
         boolean isDone = false;
-        System.out.println("Welcome to the sample app for MongoDB\n");
+        System.out.println("Welcome to the sample app for Redis Database\n");
         while (!isDone) {
             System.out.println(
                     "What would you like to do?\n" +
@@ -26,6 +25,7 @@ public class Driver {
                             "[1] Read\n" +
                             "[2] Update\n" +
                             "[3] Delete\n" +
+                            "[4] Reset Database\n" +
                             "[5] Exit");
 
             int selection = Integer.parseInt(in.readLine());
@@ -40,10 +40,10 @@ public class Driver {
                     updateContact(promptForId());
                     break;
                 case 3:
-                    deleteContact();
+                    deleteContact(promptForId());
                     break;
                 case 4:
-
+                    reset();
                     break;
                 case 5:
                     isDone = true;
@@ -52,23 +52,67 @@ public class Driver {
         }
     }
 
-    private static void deleteContact() {
-
+    private static void saveIds() {
+        id = Integer.parseInt(jedis.get("id"));
+        nextId = Integer.parseInt(jedis.get("nextId"));
     }
 
-    private static void updateContact(int promptForId) {
+    private static void reset() throws IOException {
+        System.out.println("Are you 1000% sure you want to delete the database?\n" +
+                "[0] NO\n" +
+                "[1] YES");
+        String rawAnswer = in.readLine();
+        int selection = Integer.parseInt(rawAnswer);
+
+        if (selection == 1) {
+            jedis.flushDB();
+            System.out.println("\n ****** Database Reseted ******\n\n");
+        }
+    }
+
+    private static void deleteContact(int id) {
+        jedis.del("employee" + id);
+        System.out.println("\nContact "+ id + " has been delete\n");
+    }
+
+    private static void updateContact(int id) throws IOException {
+        System.out.println("What would you like to change?");
+        System.out.println(
+                "[0] First Name\n" +
+                        "[1] Last Name\n" +
+                        "[2] Hire Year");
+        int selection = Integer.parseInt(in.readLine());
+        String[] parts = jedis.get("employee" + id).split(" ");
+        switch (selection) {
+            case 0:
+                String newName = promptForName();
+                jedis.set("employee" + id, "" + newName + " " + parts[1] + " " + parts[2]);
+                break;
+            case 1:
+                String newLastName = promptForLastName();
+                jedis.set("employee" + id, "" + parts[0] + " " + newLastName + " " + parts[2]);
+                break;
+            case 2:
+                int newYear = promptForHireYear();
+                jedis.set("employee" + id, "" + parts[0] + " " + parts[1] + " " + newYear);
+                break;
+        }
     }
 
     private static void readContact(int id) {
-        System.out.println("Contact N°"+id + ":\n"+jedis.get("employee" + id) + "\n");
+        if (jedis.get("employee" + id) == null) {
+            System.out.println("\nContact with id: " + id + " does not exist.\n");
+        } else {
+            System.out.println("\nContact N°" + id + ":\n" + jedis.get("employee" + id) + "\n");
+        }
     }
 
     private static void createContact(String name, String lastName, int hireYear) {
 
-//        Employee employee = new Employee(id, name, lastName, hireYear);
         jedis.set("employee" + nextId, "" + name + " " + lastName + " " + hireYear);
-        id++;
-        nextId++;
+        jedis.set("id", "" + id++);
+        jedis.set("nextId", "" + nextId++);
+        saveIds();
     }
 
     private static int promptForId() throws IOException {
