@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b55282e-60e0-4c36-8d36-411d986f8b6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/DynamoDBJDBC41.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dbt230/group1/database/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/DynamoDBJDBC41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbt230/group1/database/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbt230/group1/database/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dbt230/group1/database/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dbt230/group1/database/Driver.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +19,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Py0SBEFRUXtRoPFfwApQgGM9vN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -21,13 +29,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../libs/DynamoDBJDBC41.jar!/" />
+    <property name="last_opened_file_path" value="D:/libs/DynamoDBJDBC41.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dbt230.group1.database" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -44,7 +58,7 @@
   <component name="RunManager">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dbt230.group1.database.Driver" />
-      <module name="database" />
+      <module name="DBT230-Database" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="dbt230.group1.database.*" />
